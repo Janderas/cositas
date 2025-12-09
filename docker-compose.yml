@@ -2,6 +2,8 @@ version: "3"
 
 volumes:
   mysql_data:
+  romm_resources:
+  romm_redis_data:
 
 services:
   romm:
@@ -20,8 +22,8 @@ services:
       - STEAMGRIDDB_API_KEY=3cbfff0089ab8895a589ed8a849150b1 # https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#steamgriddb
       - HASHEOUS_API_ENABLED=false # https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#hasheous
     volumes:
-      - /romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
-      - /romm_redis_data:/redis-data # Cached data for background tasks
+      - romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
+      - romm_redis_data:/redis-data # Cached data for background tasks
       - /library:/romm/library # Your game library. Check https://docs.romm.app/latest/Getting-Started/Folder-Structure/ for more details.
       - /assets:/romm/assets # Uploaded saves, states, etc.
       - /config:/romm/config # (Optional) Path where config.yml is stored
