@@ -11,7 +11,7 @@ services:
     container_name: romm
     restart: unless-stopped
     environment:
-      - DB_HOST=127.0.0.1
+      - DB_HOST=romm-db
       - DB_NAME=romm # Should match MARIADB_DATABASE in mariadb
       - DB_USER=romm-user # Should match MARIADB_USER in mariadb
       - DB_PASSWD=cxb23se6 # Should match MARIADB_PASSWORD in mariadb
